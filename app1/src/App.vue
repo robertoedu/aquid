@@ -1,9 +1,8 @@
 <template>
 <div class="contain">
     <categoria titulo="Comédia"></categoria>
-    <categoria titulo="Suspense"></categoria>
-    <categoria titulo="Terror"></categoria>
-    <categoria titulo="Baseado em livros"></categoria>
+    <categoria v-for="categoria in categorias" :key="categoria.id" :titulo="categoria.titulo" :filmes="categoria.filmes"></categoria>
+
 </div>
 </template>
 
@@ -15,10 +14,23 @@ export default {
     components: {
         categoria
     },
+    beforeCreate() {
+        console.log('beforeCreate')
+    },
+    created() {
+        this.$http.get('http://localhost:3000/categorias').then(res => {
+            this.categorias = res.body;
+        });
+
+    },
+    beforeMount() {
+        console.log('beforeMount')
+    },
     data() {
         return {
             msg: 'Welcome to Your Vue.js App',
-            intervalo: null
+            intervalo: null,
+            categorias: [],
         }
     }
 }

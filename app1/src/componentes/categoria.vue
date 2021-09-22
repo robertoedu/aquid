@@ -7,25 +7,13 @@
 
     <div ref="scroller" class="row">
         <div class="row__inner">
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-            <filme tituloF="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-
-        </div>
+            <filme titulo="Assasino do Credo " imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
+            <filme v-for="filme in filmes" :key="filme.id" :titulo="filme.titulo" :imagem="filme.imagem"></filme>
     </div>
     <span @mouseover="scrollDireita()" @mouseout="clearScroll()" class="handle handleNext active">
         <i class="fa fa-caret-right" aria-hidden="true"></i>
     </span>
+</div>
 </div>
 </template>
 
@@ -33,7 +21,7 @@
 import filme from './filme.vue'
 export default {
     name: 'categoria',
-    props: ['titulo'],
+    props: ['titulo', 'filmes'],
     components: {
         filme
     },

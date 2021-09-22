@@ -5,7 +5,7 @@
     </div>
     <div class="gui-card__details">
         <div class="gui-card__title">
-            {{tituloF}}
+            {{titulo}}
         </div>
     </div>
 </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
     name: 'filme',
-    props: ['tituloF','imagem'],
+    props: ['titulo','imagem'],
     data() {
         return {
             efeitoClick:null
