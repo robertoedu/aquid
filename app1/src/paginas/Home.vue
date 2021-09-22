@@ -101,6 +101,7 @@ a:hover {
     padding: 0 4%;
     -ms-touch-action: pan-y;
     touch-action: pan-y;
+    max-width: 1900px;
 }
 
 .slider h3 {
